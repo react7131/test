@@ -1,0 +1,78 @@
+.modalContainer {
+    width: 100vw;
+    min-height: 100vh;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+.modalWrapper {
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.main-img {
+    border-radius: 10px;
+}
+
+.close {
+    position: absolute;
+    top: -20px;
+    right: 0;
+    animation: all 0.5s ease;
+}
+
+.close:hover path {
+    fill:hsl(26, 100%, 55%);    
+}
+
+.prev, .next {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    /* z-index: 99; */
+    text-align: center;
+    cursor: pointer;
+}
+
+.prev:hover path, .next:hover path {
+    stroke:hsl(26, 100%, 55%);
+}
+
+.prev {
+    left: -20px;
+}
+
+.next {
+    right: -20px;
+}
+
+.large .prev, .large .next{
+    display: none;
+}
+
+@media screen and ( max-width: 375px ) {
+    .large .prev {
+        display: flex;
+        left: 20px;
+    }
+
+    .large .next {
+        display: flex;
+        right: 20px;
+    }
+}
